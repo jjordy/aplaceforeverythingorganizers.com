@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { throttle } from '../utils';
 
 export function useInterval(callback: any, delay?: number) {
   const savedCallback = useRef(callback);
@@ -79,3 +80,39 @@ export function useDynamicRgb(
 
   return dynamicColors;
 }
+
+const events = new Set<() => void>();
+const onResize = () => events.forEach(fn => fn());
+
+export const useWindowSize = (options: { throttleMs?: number } = {}) => {
+  const { throttleMs = 100 } = options;
+  const [size, setSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const handle = throttle(() => {
+    setSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  }, throttleMs);
+
+  useEffect(() => {
+    if (events.size === 0) {
+      window.addEventListener('resize', onResize, true);
+    }
+
+    events.add(handle);
+
+    return () => {
+      events.delete(handle);
+
+      if (events.size === 0) {
+        window.removeEventListener('resize', onResize, true);
+      }
+    };
+  }, []);
+
+  return size;
+};

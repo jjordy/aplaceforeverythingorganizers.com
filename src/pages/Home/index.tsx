@@ -6,7 +6,8 @@ import {
   SlideUp,
   SlideOver,
   CircleImg,
-  Flex
+  Flex,
+  Grid
 } from "../../components";
 import me from "./me.jpg";
 import QuickStats from "../../components/QuickStats";
@@ -34,6 +35,20 @@ const HomePage: React.SFC<HomeProps> = () => {
               textShadow: '1px 1px 1px #e7e7e7',
               fontSize: 36
             }}>COMING SOON</h1>
+            <Grid width='33%' gap={16}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed, quis ab itaque possimus repellendus perferendis repudiandae? Vitae maiores impedit ex asperiores quaerat voluptatum quasi, et aliquam facere quidem ut.
+                </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed, quis ab itaque possimus repellendus perferendis repudiandae? Vitae maiores impedit ex asperiores quaerat voluptatum quasi, et aliquam facere quidem ut.
+                </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed, quis ab itaque possimus repellendus perferendis repudiandae? Vitae maiores impedit ex asperiores quaerat voluptatum quasi, et aliquam facere quidem ut.
+              </p>
+            </Grid>
           </SlideUp>
         </MobileFriendlyContainer>
       </Container>

@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px;
     padding: 0px;
     transition: background 0.2s ease-in;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   p {
     font-size: 1.2rem;
@@ -71,7 +71,7 @@ export const AppContainer = styled.div`
 export const Navigation = styled.nav`
   box-sizing: border-box;
   min-width: 10%;
-  background: #222;
+  background: #f6f9fc;
   padding: 1rem;
   flex-direction: column;
   justify-content: center;
@@ -81,9 +81,10 @@ export const Navigation = styled.nav`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     line-height: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
   }
   & svg {
     width: 24px;

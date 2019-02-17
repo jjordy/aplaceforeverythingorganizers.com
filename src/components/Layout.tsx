@@ -19,10 +19,11 @@ import Envelope from "./Icons/EnvelopeIcon";
 import Desktop from "./Icons/DesktopIcon";
 import HomeIcon from "./Icons/HomeIcon";
 import Bars from "./Icons/BarsIcon";
-import { useDynamicRgb } from "../hooks";
+import { useDynamicRgb, useWindowSize } from "../hooks";
 import Sidebar from "./Sidebar";
 import posed from "react-pose";
 import logo from './logo.png'
+import { ThemeProvider } from 'styled-components'
 
 const AnimatedContent = posed.div({
   open: { x: 250 },
@@ -30,11 +31,12 @@ const AnimatedContent = posed.div({
 });
 
 const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
-  const colorOne = useDynamicRgb([125, 97, 83], {
+  const { width } = useWindowSize()
+  const colorOne = useDynamicRgb([152, 97, 83], {
     interval: 300,
     disabled: true
   });
-  const colorTwo = useDynamicRgb([236, 192, 177], {
+  const colorTwo = useDynamicRgb([252, 192, 177], {
     interval: 250,
     disabled:  true
   });
@@ -42,18 +44,25 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
   const activeLink = ({ isCurrent }: { isCurrent: boolean }) => {
     return {
       style: {
-        color: isCurrent ? `rgb(${colorTwo.join(",")})` : "#FFF",
-        fill: isCurrent ? `rgb(${colorTwo.join(",")})` : "#FFF"
+        color: isCurrent ? `rgb(244, 202, 188)` : "#777",
+        fill: isCurrent ? `rgb(244, 202, 188)` : "#777"
       }
     };
   };
-
   return (
+    <ThemeProvider theme={{
+      primary: '#B4ACAA',
+      secondary: '#F7E5E1',
+      tertiary: '#E5DED6',
+      pink: '#f4cabc',
+      orange: '#986153'
+    }}>
+
     <BodyContainer
       style={{
-        background: `linear-gradient(-45deg, rgb(${colorOne.join(
+        background: `linear-gradient(-45deg, rgba(${colorOne.join(
           ","
-        )}), rgb(${colorTwo.join(",")}))`
+        )}, 0.6), rgba(${colorTwo.join(",")}, 0.6))`
       }}
     >
       <GlobalStyles />
@@ -80,6 +89,10 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
               Home
               <HomeIcon />
             </Link>
+              <Link to="/about" getProps={activeLink}>
+                Meet Genna
+              <HomeIcon />
+              </Link>
             <Link to="/contact" getProps={activeLink}>
               Contact
               <Envelope />
@@ -87,7 +100,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
           </Navigation>
 
           <MainContent>
-            <Flex align="center" justify="space-between">
+            <Flex align="center" justify={width > 768 ? 'center' : 'space-between'}>
               <Header to="/">
                 <Logo>
                   <Image src={logo} />
@@ -118,6 +131,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
       </AnimatedContent>
       <Footer>&copy; 2019 A Place for Everything Organizers</Footer>
     </BodyContainer>
+    </ThemeProvider>
   );
 };
 

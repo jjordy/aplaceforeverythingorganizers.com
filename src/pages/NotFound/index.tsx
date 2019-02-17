@@ -22,7 +22,6 @@ const WorkPage: React.SFC<WorkProps> = () => {
         <Center style={{ minHeight: 350 }}>
           <div>
             <h1>404 Page Not Found</h1>
-            <p>Man we couldnt find that page... Bummer</p>
           </div>
         </Center>
       </Item>
