@@ -9,7 +9,9 @@ import {
   BodyContainer,
   Header,
   Flex,
-  MobileButton
+  MobileButton,
+  Image,
+  Logo
 } from ".";
 import { Link } from "@reach/router";
 import Github from "./Icons/GithubIcon";
@@ -20,6 +22,7 @@ import Bars from "./Icons/BarsIcon";
 import { useDynamicRgb } from "../hooks";
 import Sidebar from "./Sidebar";
 import posed from "react-pose";
+import logo from './logo.png'
 
 const AnimatedContent = posed.div({
   open: { x: 250 },
@@ -27,11 +30,11 @@ const AnimatedContent = posed.div({
 });
 
 const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
-  const colorOne = useDynamicRgb([51, 171, 177], {
+  const colorOne = useDynamicRgb([125, 97, 83], {
     interval: 300,
     disabled: true
   });
-  const colorTwo = useDynamicRgb([239, 171, 31], {
+  const colorTwo = useDynamicRgb([236, 192, 177], {
     interval: 250,
     disabled:  true
   });
@@ -59,18 +62,10 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
           Home
           <HomeIcon />
         </Link>
-        <Link to="/work" onClick={() => toggleSidebar(false)}>
-          Work
-          <Desktop />
-        </Link>
         <Link to="/contact" onClick={() => toggleSidebar(false)}>
           Contact
           <Envelope />
         </Link>
-        <a href="https://github.com/jjordy">
-          Github
-          <Github />
-        </a>
       </Sidebar>
       <AnimatedContent pose={sidebarOpen ? "open" : "closed"}>
         <AppContainer
@@ -85,29 +80,18 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
               Home
               <HomeIcon />
             </Link>
-            <Link to="/work" getProps={activeLink}>
-              Work
-              <Desktop />
-            </Link>
             <Link to="/contact" getProps={activeLink}>
               Contact
               <Envelope />
             </Link>
-            <a href="https://github.com/jjordy">
-              Github
-              <Github style={{ fill: "white" }} />
-            </a>
           </Navigation>
 
           <MainContent>
             <Flex align="center" justify="space-between">
-              <Header
-                to="/"
-                style={{
-                  color: `rgb(${colorTwo.join(",")})`
-                }}
-              >
-                JORDAN ADDISON
+              <Header to="/">
+                <Logo>
+                  <Image src={logo} />
+                </Logo>
               </Header>
               <MobileButton onClick={() => toggleSidebar(!sidebarOpen)}>
                 <Bars
@@ -127,19 +111,12 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
                 )}), rgb(${colorTwo.join(",")}))`
               }}
             />
-            <strong
-              style={{
-                color: `rgba(${colorOne.join(",")})`
-              }}
-            >
-              Fullstack Web Developer
-            </strong>
             <div style={{ marginBottom: "1rem" }} />
             {children}
           </MainContent>
         </AppContainer>
       </AnimatedContent>
-      <Footer>&copy; 2019 Jordan Addison</Footer>
+      <Footer>&copy; 2019 A Place for Everything Organizers</Footer>
     </BodyContainer>
   );
 };

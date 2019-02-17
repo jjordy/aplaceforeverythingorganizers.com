@@ -34,7 +34,7 @@ const Form = styled.form.attrs((props: any) => ({
 
   & button {
     padding: 1rem 2rem 1rem 2rem;
-    background-color: rebeccapurple;
+    background-color: #B4ACAA;
     color: #fff;
     font-weight: 700;
     border: 0px;

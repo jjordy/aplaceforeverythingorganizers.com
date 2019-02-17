@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     color: rgb(239, 171, 31);
   }
   h1, h2, h3, h4, h5 ,h6 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Caveat', cursive;
   }
   hr {
     border-top: 1px solid #e7e7e7;
@@ -244,3 +244,16 @@ export const Grid = styled(AnimatedContainer)`
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }`};
 `;
+
+export const Image = styled.img`
+  height: auto;
+  max-width: 100%;
+`
+
+export const Logo = styled.div`
+  width: 350px;
+
+  @media(max-width: 768px) {
+    width: 250px;
+  }
+`
