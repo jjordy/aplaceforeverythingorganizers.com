@@ -20,7 +20,7 @@ const StyledSidebar = styled(AnimatedSidebar)`
   background: #fff;
 
   & a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 100%;
     justify-content: space-between;
     display: flex;
@@ -28,7 +28,6 @@ const StyledSidebar = styled(AnimatedSidebar)`
     font-weight: 700;
     text-decoration: none;
     margin-bottom: 0.5rem;
-    color: #777;
     line-height: 2rem;
     & svg {
       width: 24px;

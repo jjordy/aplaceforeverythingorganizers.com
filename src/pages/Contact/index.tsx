@@ -26,15 +26,21 @@ const Form = styled.form.attrs((props: any) => ({
 
   & label {
     font-weight: bold;
+    color: #CCC;
   }
 
   & input {
     height: 48px;
+    color: #CCC;
+  }
+
+  & textarea {
+    color: #CCC;
   }
 
   & button {
     padding: 1rem 2rem 1rem 2rem;
-    background-color: #B4ACAA;
+    background-color: ${props => props.theme.primary};
     color: #fff;
     font-weight: 700;
     border: 0px;
@@ -48,7 +54,7 @@ const Form = styled.form.attrs((props: any) => ({
 const ContactPage: React.SFC<ContactProps> = () => {
   return (
     <>
-      <h1>Contact Me</h1>
+      <h1 style={{ color: '#986153'}}>Contact Me</h1>
       <Form name='contact' action='/?submit-contact-form=success' netlify netlify-honeypot="bot-field" method='post'>
         <p className="hidden">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>

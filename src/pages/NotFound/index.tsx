@@ -21,7 +21,7 @@ const WorkPage: React.SFC<WorkProps> = () => {
       <Item>
         <Center style={{ minHeight: 350 }}>
           <div>
-            <h1>404 Page Not Found</h1>
+            <h1 style={{ color: '#986153' }}>404 Page Not Found</h1>
           </div>
         </Center>
       </Item>

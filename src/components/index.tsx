@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     color: rgb(239, 171, 31);
   }
   h1, h2, h3, h4, h5 ,h6 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Lato', sans-serif;
   }
   hr {
     border-top: 1px solid #e7e7e7;
@@ -67,6 +67,14 @@ export const AppContainer = styled.div`
     flex-direction: column;
   }
 `;
+
+const MyLink = ({ children, className, to, onClick}: any) => (
+  <Link to={to} className={className} onClick={onClick}>{children}</Link>
+)
+
+export const SidebarItem = styled(MyLink)`
+  color: ${props => props.theme.orange};
+`
 
 export const Navigation = styled.nav`
   box-sizing: border-box;

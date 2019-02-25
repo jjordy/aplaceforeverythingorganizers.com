@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./pages/Home";
-import Work from "./pages/Work";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { PosedRouter } from "./components";
@@ -11,7 +11,7 @@ const App: React.SFC<{}> = () => {
     <Layout>
       <PosedRouter>
         <Home path="/" />
-        <Work path="/work" />
+        <About path="/about-us" />
         <Contact path="/contact" />
         <NotFound default />
       </PosedRouter>

@@ -11,7 +11,8 @@ import {
   Flex,
   MobileButton,
   Image,
-  Logo
+  Logo,
+  SidebarItem
 } from ".";
 import { Link } from "@reach/router";
 import Github from "./Icons/GithubIcon";
@@ -67,14 +68,16 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
     >
       <GlobalStyles />
       <Sidebar open={sidebarOpen}>
-        <Link to="/" onClick={() => toggleSidebar(false)}>
-          Home
-          <HomeIcon />
-        </Link>
-        <Link to="/contact" onClick={() => toggleSidebar(false)}>
-          Contact
-          <Envelope />
-        </Link>
+        <SidebarItem to="/" onClick={() => toggleSidebar(false)}>
+          HOME
+        </SidebarItem>
+          <SidebarItem to="/about-us" onClick={() => toggleSidebar(false)}>
+            MEET GENNA
+        </SidebarItem>
+        <SidebarItem to="/contact" onClick={() => toggleSidebar(false)}>
+          CONTACT
+        </SidebarItem>
+
       </Sidebar>
       <AnimatedContent pose={sidebarOpen ? "open" : "closed"}>
         <AppContainer
@@ -89,7 +92,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
               Home
               <HomeIcon />
             </Link>
-              <Link to="/about" getProps={activeLink}>
+              <Link to="/about-us" getProps={activeLink}>
                 Meet Genna
               <HomeIcon />
               </Link>
