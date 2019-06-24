@@ -199,6 +199,9 @@ export const CircleImg = styled(AnimatedImg)`
 export const Img = styled(AnimatedImg)`
   max-width: 100%;
   height: auto;
+  @media(max-width: 768px) {
+    max-width: 100% !important;
+  }
 `;
 
 export const Flex = styled(AnimatedContainer)`

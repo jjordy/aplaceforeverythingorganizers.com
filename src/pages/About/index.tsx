@@ -9,6 +9,7 @@ import {
   Image
 } from "../../components";
 import styled from "styled-components";
+import about_us_img from './about_us.png'
 
 export interface HomeProps extends RouteComponentProps { }
 
@@ -40,8 +41,9 @@ const About: React.SFC<HomeProps> = () => {
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
               </p>
               </div>
-
-              <Image src='https://via.placeholder.com/1000x500/e7e7e7' />
+              <div style={{display: 'flex', justifyContent: 'center', padding: '3rem'}}>
+              <Image src={about_us_img} alt='A picture of me and my husband with our 2 boys'/>
+              </div>
             </Grid>
           </SlideUp>
         </MobileFriendlyContainer>
