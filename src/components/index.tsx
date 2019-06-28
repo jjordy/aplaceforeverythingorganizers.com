@@ -45,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   strong {
     font-size: 1.2rem;
-    color: rgb(239, 171, 31);
+    color: rgb(252, 192, 177);
   }
   h1, h2, h3, h4, h5 ,h6 {
     font-family: 'Lato', sans-serif;
@@ -53,6 +53,7 @@ export const GlobalStyles = createGlobalStyle`
   hr {
     border-top: 1px solid #e7e7e7;
   }
+  .huge { font-size: 2rem }
 `;
 
 export const BodyContainer = styled.div`

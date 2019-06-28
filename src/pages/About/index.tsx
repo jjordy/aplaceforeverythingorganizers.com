@@ -21,6 +21,29 @@ const MobileFriendlyContainer = styled(Flex)`
   }
 `;
 
+const MobileImageContainer = styled.div`
+  display: none;
+  padding: 1rem;
+  & img {
+    border-radius: 6%;
+  }
+  @media(max-width:768px) {
+    display: block;
+  }
+`
+
+const DesktopImageContainer =styled.div`
+  display: flex;
+  padding: 5rem;
+  justify-content: center;
+  & img {
+    border-radius: 6%;
+  }
+  @media(max-width:768px) {
+    display: none;
+  }
+`
+
 const About: React.SFC<HomeProps> = () => {
   return (
     <Center style={{ minHeight: 350 }}>
@@ -31,19 +54,36 @@ const About: React.SFC<HomeProps> = () => {
               color: '#986153',
               textShadow: '1px 1px 1px #e7e7e7',
               fontSize: 36
-            }}>About Us</h1>
+            }}>About Me</h1>
             <Grid width='50%' gap={16} align='center'>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
+                  <span className='huge'>My</span> name is Genna Irby. I have always been business oriented and enjoyed helping people. 
+                  I graduated from the University of Southern Mississippi with a degree in Business Administration.</p>
+                  <MobileImageContainer>
+                    <Image src={about_us_img} alt='A picture of me and my husband with our 2 boys'/>
+                  </MobileImageContainer>
+                 <p>Fast forward a few years, I am now a twin mom, realtor, and the owner/head organizer of A Place for Everything Organizers! 
+                  As a realtor, I saw my clients’ need for an organizer and knew that I could help. I have created many organizing solutions, 
+                  both in my own home and in others’ homes. 
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
-              </p>
+                  What I do:<br />
+                  <span role='img'aria-label='House'>🏠</span> I Come to your house, <strong>evaluate your needs</strong>, and <strong>create solutions</strong>.
+                </p>
+                <a
+                  href='https://www.facebook.com/GenIrbyOrganizer/?rc=p'
+                  style={{
+                  color: '#986153',
+                  textShadow: '1px 1px 1px #e7e7e7',
+                  fontSize: 24
+                }}>
+                  Check out before and after pictures on my facebook page.
+                </a>
               </div>
-              <div style={{display: 'flex', justifyContent: 'center', padding: '3rem'}}>
-              <Image src={about_us_img} alt='A picture of me and my husband with our 2 boys'/>
-              </div>
+              <DesktopImageContainer>
+                <Image src={about_us_img} alt='A picture of me and my husband with our 2 boys'/>
+              </DesktopImageContainer>
             </Grid>
           </SlideUp>
         </MobileFriendlyContainer>

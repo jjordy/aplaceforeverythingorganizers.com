@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { throttle } from '../utils';
 
 export function useInterval(callback: any, delay?: number) {
@@ -112,7 +112,7 @@ export const useWindowSize = (options: { throttleMs?: number } = {}) => {
         window.removeEventListener('resize', onResize, true);
       }
     };
-  }, []);
+  }, [handle]);
 
   return size;
 };

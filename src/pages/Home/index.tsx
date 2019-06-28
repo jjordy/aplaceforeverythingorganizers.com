@@ -8,8 +8,6 @@ import {
   Grid,
   Image
 } from "../../components";
-import me from "./me.jpg";
-import QuickStats from "../../components/QuickStats";
 import styled from "styled-components";
 
 export interface HomeProps extends RouteComponentProps { }
@@ -38,7 +36,7 @@ const HomePage: React.SFC<HomeProps> = () => {
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
               </p>
-              <Image src='https://via.placeholder.com/400x250/e7e7e7' />
+              <Image src='https://via.placeholder.com/400x250/e7e7e7' style={{borderRadius: '6%'}}/>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
               </p>

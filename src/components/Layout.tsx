@@ -15,9 +15,7 @@ import {
   SidebarItem
 } from ".";
 import { Link } from "@reach/router";
-import Github from "./Icons/GithubIcon";
 import Envelope from "./Icons/EnvelopeIcon";
-import Desktop from "./Icons/DesktopIcon";
 import HomeIcon from "./Icons/HomeIcon";
 import Bars from "./Icons/BarsIcon";
 import { useDynamicRgb, useWindowSize } from "../hooks";
