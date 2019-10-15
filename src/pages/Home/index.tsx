@@ -27,7 +27,7 @@ const HomePage: React.SFC<HomeProps> = () => {
         <MobileFriendlyContainer align="center">
           <SlideUp style={{ padding: "1rem" }}>
             <h1 className="hidden" style={{ color: '#986153' }}>A Place for everything organizers</h1>
-            <h2 style={{
+            {/* <h2 style={{
               color: '#986153',
               textShadow: '1px 1px 1px #e7e7e7',
               fontSize: 36
@@ -40,7 +40,7 @@ const HomePage: React.SFC<HomeProps> = () => {
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptates repudiandae, nulla quasi vel necessitatibus placeat modi voluptatem doloribus excepturi expedita. Inventore eius neque labore cum eligendi corrupti recusandae hic.
               </p>
-            </Grid>
+            </Grid> */}
           </SlideUp>
         </MobileFriendlyContainer>
       </Container>
